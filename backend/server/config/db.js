@@ -49,13 +49,19 @@ const connectDB = async () => {
   if (!uri) {
     console.error("❌ MONGODB_URI is not set in your .env file.");
     console.error("   → Copy .env.example to .env and fill in your MongoDB connection string.");
-    process.exit(1);
+    if (!process.env.VERCEL) {
+      process.exit(1);
+    }
+    return;
   }
 
   if (uri.includes("<db_password>") || uri.includes("<password>")) {
     console.error("❌ MONGODB_URI still contains a placeholder password.");
     console.error("   → Open .env and replace <db_password> with your actual MongoDB password.");
-    process.exit(1);
+    if (!process.env.VERCEL) {
+      process.exit(1);
+    }
+    return;
   }
 
   console.log("Connecting to MongoDB...");

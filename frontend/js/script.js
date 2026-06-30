@@ -240,7 +240,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const userNameDisplay = document.getElementById('user-name-display');
   const logoutBtn = document.getElementById('logout-btn');
 
-  const API_URL = 'http://localhost:5000/api';
+  const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://localhost:5000/api'
+    : '/api';
 
   // Toggle internal forms
   document.getElementById('switch-to-signup').addEventListener('click', (e) => {
@@ -1420,7 +1422,7 @@ document.getElementById('project-form')?.addEventListener('submit', async (e) =>
   }
 
   try {
-    const res = await fetch('http://localhost:5000/api/project', {
+    const res = await fetch(`${API_URL}/project`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
