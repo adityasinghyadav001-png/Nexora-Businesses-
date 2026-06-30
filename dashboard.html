@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXORA | Client Dashboard</title>
+    <meta name="description" content="NEXORA Client Dashboard — Track projects, chat with AI, manage your business.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="brand">NEXORA</div>
+        <ul class="nav-links">
+            <li><a href="#" class="nav-link active" data-target="overview-view">📊 Overview</a></li>
+            <li><a href="#" class="nav-link" data-target="projects-view">📁 Projects</a></li>
+            <li><a href="#" class="nav-link" data-target="chat-view">🤖 AI Assistant</a></li>
+            <li><a href="index.html">🌐 Home</a></li>
+        </ul>
+        <button class="logout-btn" id="logout-btn">🚪 Logout</button>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+        <!-- OVERVIEW VIEW -->
+        <section id="overview-view" class="view-section active">
+            <header class="dashboard-header">
+                <div class="user-welcome">
+                    <h1>Welcome back, <span id="user-name">User</span>! 👋</h1>
+                    <p>Here's an overview of your projects and activity.</p>
+                </div>
+                <button class="btn-primary" id="header-create-btn">+ New Project</button>
+            </header>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card" style="border-top: 3px solid var(--primary)">
+                    <div class="icon">📁</div>
+                    <div class="value" id="stat-total">0</div>
+                    <div class="label">Total Projects</div>
+                </div>
+                <div class="stat-card" style="border-top: 3px solid var(--status-progress)">
+                    <div class="icon">⚡</div>
+                    <div class="value" id="stat-active">0</div>
+                    <div class="label">Active</div>
+                </div>
+                <div class="stat-card" style="border-top: 3px solid var(--status-completed)">
+                    <div class="icon">✅</div>
+                    <div class="value" id="stat-completed">0</div>
+                    <div class="label">Completed</div>
+                </div>
+            </div>
+
+            <!-- Recent Projects -->
+            <h2 class="section-title">Recent Projects</h2>
+            <div class="projects-grid" id="recent-projects-grid">
+                <!-- Injected by JS -->
+            </div>
+        </section>
+
+        <!-- PROJECTS VIEW -->
+        <section id="projects-view" class="view-section">
+            <header class="dashboard-header">
+                <div class="user-welcome">
+                    <h1>My Projects</h1>
+                    <p>Track progress and manage all your service requests.</p>
+                </div>
+                <button class="btn-primary" id="projects-create-btn">+ New Project</button>
+            </header>
+
+            <div class="projects-grid" id="all-projects-grid">
+                <!-- Injected by JS -->
+            </div>
+        </section>
+
+        <!-- AI CHAT VIEW -->
+        <section id="chat-view" class="view-section">
+            <header class="dashboard-header">
+                <div class="user-welcome">
+                    <h1>NEXORA AI Assistant 🤖</h1>
+                    <p>Ask about our services, pricing, or get help with your project.</p>
+                </div>
+            </header>
+
+            <div class="chat-container">
+                <div class="chat-header">
+                    <div class="bot-avatar">🤖</div>
+                    <div>
+                        <h3>NEXORA AI</h3>
+                        <p>Always online • Business Expert</p>
+                    </div>
+                </div>
+                <div class="chat-messages" id="chat-messages">
+                    <div class="chat-msg bot">
+                        Hello! 👋 I'm NEXORA AI, your personal business assistant. How can I help you today? You can ask me about our services, pricing, or general business advice.
+                    </div>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" id="chat-input" placeholder="Ask me anything about our services..." autocomplete="off">
+                    <button class="chat-send-btn" id="chat-send-btn">Send</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Create Project Modal -->
+    <div class="modal-overlay" id="create-project-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Request a Service</h2>
+                <button class="close-btn" id="close-modal-btn">&times;</button>
+            </div>
+            <form id="create-project-form">
+                <div class="form-group">
+                    <label>Select Service *</label>
+                    <select id="service-name" required>
+                        <option value="">-- Choose a Service --</option>
+                        <option value="Website Development">Website Development</option>
+                        <option value="AI Chatbot Development">AI Chatbot Development</option>
+                        <option value="Business Automation">Business Automation</option>
+                        <option value="E-Commerce Solution">E-Commerce Solution</option>
+                        <option value="AI SaaS System">AI SaaS System</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Project Details / Requirements *</label>
+                    <textarea id="project-requirements" placeholder="Tell us about your goals and specific features needed..." required></textarea>
+                </div>
+                <button type="submit" class="btn-primary btn-block">🚀 Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="notification-toast success" id="notification">Action Successful</div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

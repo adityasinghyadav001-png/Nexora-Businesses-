@@ -1,0 +1,2369 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NEXORA — AI-Powered Business Platform</title>
+    <meta
+      name="description"
+      content="NEXORA is the all-in-one AI-powered platform that helps businesses build websites, AI chatbots, automation systems, and growth tools."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- Animated Background Layers -->
+    <div class="bg-grid"></div>
+    <canvas id="particles-canvas"></canvas>
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+    <div class="light-ray ray-1"></div>
+    <div class="light-ray ray-2"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+      <a href="#home" class="nav-brand">
+        <svg
+          class="nav-logo"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+        >
+          <defs>
+            <linearGradient
+              id="logoGrad"
+              x1="0"
+              y1="0"
+              x2="32"
+              y2="32"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#7c3aed" />
+              <stop offset="1" stop-color="#06b6d4" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M16 2L28 8v16l-12 6L4 24V8l12-6z"
+            stroke="url(#logoGrad)"
+            stroke-width="2"
+            fill="none"
+          />
+          <path
+            d="M16 8l6 3v10l-6 3-6-3V11l6-3z"
+            fill="url(#logoGrad)"
+            opacity="0.5"
+          />
+          <circle cx="16" cy="16" r="3" fill="url(#logoGrad)" />
+        </svg>
+        <span class="brand-name">NEXORA</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#solutions">Solutions</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div
+          id="auth-unlogged"
+          style="display: flex; gap: 1rem; align-items: center"
+        >
+          <a href="#login" class="btn-nav-cta" id="nav-login-btn">Log In</a>
+        </div>
+        <div
+          id="auth-logged"
+          style="display: none; align-items: center; gap: 1.5rem"
+        >
+          <span
+            class="user-greeting"
+            style="
+              color: var(--text-secondary);
+              font-weight: 500;
+              font-size: 0.95rem;
+            "
+            >Hi,
+            <span id="user-name-display" style="color: #fff; font-weight: 600"
+              >User</span
+            ></span
+          >
+          <button
+            id="logout-btn"
+            class="nav-link-login"
+            style="background: none; border: none; cursor: pointer; padding: 0"
+          >
+            Log Out
+          </button>
+        </div>
+      </div>
+      <button
+        class="mobile-menu-btn"
+        id="mobile-menu-btn"
+        aria-label="Toggle menu"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#solutions">Solutions</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <a href="#login" class="btn-primary btn-mobile-cta">Log In</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <!-- Badge -->
+        <div class="badge animate-in" style="--delay: 0s">
+          <span class="badge-dot"></span>
+          🚀 AI-Powered Business Platform
+        </div>
+
+        <!-- Main Heading -->
+        <h1 class="hero-heading animate-in" style="--delay: 0.15s">
+          Build Your Business with<br />
+          <span class="gradient-text">AI-Powered Digital</span><br />
+          Solutions <span class="emoji-rocket">🚀</span>
+        </h1>
+
+        <!-- Subheading -->
+        <p class="hero-subheading animate-in" style="--delay: 0.3s">
+          Websites, AI Chatbots, Automation &amp; Growth Tools — All in One
+          Platform
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-cta animate-in" style="--delay: 0.45s">
+          <button type="button" class="btn-primary" id="cta-get-started" aria-label="Get Started with NEXORA">
+            <span class="btn-glow"></span>
+            🚀 Get Started
+          </button>
+          <a href="#demo" class="btn-secondary" id="cta-view-demo">
+            <span class="btn-border-glow"></span>
+            🎥 View Demo
+          </a>
+        </div>
+
+        <!-- Trust Indicators -->
+        <div class="trust-row animate-in" style="--delay: 0.6s">
+          <div class="trust-avatars">
+            <div class="avatar" style="--hue: 260">N</div>
+            <div class="avatar" style="--hue: 200">A</div>
+            <div class="avatar" style="--hue: 180">S</div>
+            <div class="avatar" style="--hue: 300">K</div>
+            <div class="avatar" style="--hue: 220">R</div>
+          </div>
+          <span class="trust-text"
+            >Trusted by <strong>2,500+</strong> businesses worldwide</span
+          >
+        </div>
+      </div>
+
+      <!-- Floating Cards -->
+      <div
+        class="floating-card card-left-1 animate-float"
+        style="--delay: 0.7s"
+      >
+        <div class="card-icon card-icon-green">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+            />
+          </svg>
+        </div>
+        <div class="card-text">
+          <span class="card-label">AI Chatbot</span>
+          <span class="card-status card-status-active">● Active</span>
+        </div>
+      </div>
+
+      <div
+        class="floating-card card-right-1 animate-float"
+        style="--delay: 0.85s"
+      >
+        <div class="card-icon card-icon-blue">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+            <line x1="3" y1="9" x2="21" y2="9" />
+            <line x1="9" y1="21" x2="9" y2="9" />
+          </svg>
+        </div>
+        <div class="card-text">
+          <span class="card-label">Website Generated</span>
+          <span class="card-status card-status-done">✓ Complete</span>
+        </div>
+      </div>
+
+      <div class="floating-card card-left-2 animate-float" style="--delay: 1s">
+        <div class="card-icon card-icon-purple">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+          </svg>
+        </div>
+        <div class="card-text">
+          <span class="card-label">Leads</span>
+          <span class="card-value">+120% <span class="arrow-up">↑</span></span>
+        </div>
+      </div>
+
+      <div
+        class="floating-card card-right-2 animate-float"
+        style="--delay: 1.15s"
+      >
+        <div class="card-icon card-icon-cyan">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+            <line x1="9" y1="9" x2="9.01" y2="9" />
+            <line x1="15" y1="9" x2="15.01" y2="9" />
+          </svg>
+        </div>
+        <div class="card-text">
+          <span class="card-label">Satisfaction</span>
+          <span class="card-value">98.7%</span>
+        </div>
+      </div>
+
+      <!-- Bottom gradient fade -->
+      <div class="hero-bottom-fade"></div>
+    </section>
+
+    <!-- ===== Services Section ===== -->
+    <section class="services" id="features">
+      <!-- Section glow accents -->
+      <div class="services-glow services-glow-left"></div>
+      <div class="services-glow services-glow-right"></div>
+
+      <div class="services-header">
+        <div class="section-badge scroll-reveal">
+          <span class="section-badge-dot"></span>
+          Our Services
+        </div>
+        <h2 class="services-heading scroll-reveal">
+          Powerful AI Solutions for<br />
+          <span class="gradient-text-services">Modern Businesses</span> ⚡
+        </h2>
+        <p class="services-subheading scroll-reveal">
+          Everything you need to build, automate, and scale your business — all
+          in one place.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Card 1: Website Development -->
+        <div class="service-card scroll-reveal" id="service-web-dev">
+          <div class="service-card-glow"></div>
+          <div class="service-card-border"></div>
+          <div class="service-card-content">
+            <div class="service-icon-wrapper">
+              <svg
+                class="service-icon"
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="url(#svcGrad1)"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <defs>
+                  <linearGradient
+                    id="svcGrad1"
+                    x1="0"
+                    y1="0"
+                    x2="24"
+                    y2="24"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#a78bfa" />
+                    <stop offset="1" stop-color="#22d3ee" />
+                  </linearGradient>
+                </defs>
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg>
+              <div class="icon-ring"></div>
+            </div>
+            <h3 class="service-title">Website Development</h3>
+            <p class="service-description">
+              AI-powered website creation with stunning, responsive designs that
+              convert visitors into loyal customers.
+            </p>
+            <div class="service-actions">
+              <button
+                class="service-link btn-learn-more"
+                onclick="openLearnMoreModal('website-development')"
+              >
+                Learn more
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
+              <button
+                class="btn-locked"
+                data-service="website-development"
+                onclick="openServiceForm('website-development')"
+              >
+                <span class="locked-icon">🔒</span>
+                <span class="locked-text">Get Started</span>
+                <span class="locked-tooltip">Login to unlock this feature</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: AI Chatbots -->
+        <div class="service-card scroll-reveal" id="service-chatbots">
+          <div class="service-card-glow"></div>
+          <div class="service-card-border"></div>
+          <div class="service-card-content">
+            <div class="service-icon-wrapper">
+              <svg
+                class="service-icon"
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="url(#svcGrad2)"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <defs>
+                  <linearGradient
+                    id="svcGrad2"
+                    x1="0"
+                    y1="0"
+                    x2="24"
+                    y2="24"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#c084fc" />
+                    <stop offset="1" stop-color="#06b6d4" />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                />
+                <line x1="9" y1="10" x2="9.01" y2="10" />
+                <line x1="12" y1="10" x2="12.01" y2="10" />
+                <line x1="15" y1="10" x2="15.01" y2="10" />
+              </svg>
+              <div class="icon-ring"></div>
+            </div>
+            <h3 class="service-title">AI Chatbots</h3>
+            <p class="service-description">
+              Intelligent conversational agents that engage customers 24/7,
+              answer queries, and drive sales automatically.
+            </p>
+            <div class="service-actions">
+              <button
+                class="service-link btn-learn-more"
+                onclick="openLearnMoreModal('ai-chatbots')"
+              >
+                Learn more
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
+              <button
+                class="btn-locked"
+                data-service="ai-chatbots"
+                onclick="openServiceForm('ai-chatbots')"
+              >
+                <span class="locked-icon">🔒</span>
+                <span class="locked-text">Get Started</span>
+                <span class="locked-tooltip">Login to unlock this feature</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Automation Systems -->
+        <div class="service-card scroll-reveal" id="service-automation">
+          <div class="service-card-glow"></div>
+          <div class="service-card-border"></div>
+          <div class="service-card-content">
+            <div class="service-icon-wrapper">
+              <svg
+                class="service-icon"
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="url(#svcGrad3)"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <defs>
+                  <linearGradient
+                    id="svcGrad3"
+                    x1="0"
+                    y1="0"
+                    x2="24"
+                    y2="24"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#818cf8" />
+                    <stop offset="1" stop-color="#34d399" />
+                  </linearGradient>
+                </defs>
+                <polyline points="13 2 13 9 20 9" />
+                <path d="M13 2L6 9l7 7 7-7-7-7z" />
+                <circle cx="12" cy="16" r="2" />
+                <path d="M12 18v3" />
+                <path d="M8 21h8" />
+              </svg>
+              <div class="icon-ring"></div>
+            </div>
+            <h3 class="service-title">Automation Systems</h3>
+            <p class="service-description">
+              Streamline workflows and eliminate repetitive tasks with AI-driven
+              automation that saves time and resources.
+            </p>
+            <div class="service-actions">
+              <button
+                class="service-link btn-learn-more"
+                onclick="openLearnMoreModal('automation-systems')"
+              >
+                Learn more
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
+              <button
+                class="btn-locked"
+                data-service="automation-systems"
+                onclick="openServiceForm('automation-systems')"
+              >
+                <span class="locked-icon">🔒</span>
+                <span class="locked-text">Get Started</span>
+                <span class="locked-tooltip">Login to unlock this feature</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: E-commerce Solutions -->
+        <div class="service-card scroll-reveal" id="service-ecommerce">
+          <div class="service-card-glow"></div>
+          <div class="service-card-border"></div>
+          <div class="service-card-content">
+            <div class="service-icon-wrapper">
+              <svg
+                class="service-icon"
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="url(#svcGrad4)"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <defs>
+                  <linearGradient
+                    id="svcGrad4"
+                    x1="0"
+                    y1="0"
+                    x2="24"
+                    y2="24"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#f472b6" />
+                    <stop offset="1" stop-color="#7c3aed" />
+                  </linearGradient>
+                </defs>
+                <circle cx="9" cy="21" r="1" />
+                <circle cx="20" cy="21" r="1" />
+                <path
+                  d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                />
+              </svg>
+              <div class="icon-ring"></div>
+            </div>
+            <h3 class="service-title">E-commerce Solutions</h3>
+            <p class="service-description">
+              Full-featured online stores with AI product recommendations, smart
+              inventory, and seamless payment processing.
+            </p>
+            <div class="service-actions">
+              <button
+                class="service-link btn-learn-more"
+                onclick="openLearnMoreModal('e-commerce-solutions')"
+              >
+                Learn more
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
+              <button
+                class="btn-locked"
+                data-service="e-commerce-solutions"
+                onclick="openServiceForm('e-commerce-solutions')"
+              >
+                <span class="locked-icon">🔒</span>
+                <span class="locked-text">Get Started</span>
+                <span class="locked-tooltip">Login to unlock this feature</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: Marketing & SEO -->
+        <div class="service-card scroll-reveal" id="service-marketing">
+          <div class="service-card-glow"></div>
+          <div class="service-card-border"></div>
+          <div class="service-card-content">
+            <div class="service-icon-wrapper">
+              <svg
+                class="service-icon"
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="url(#svcGrad5)"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <defs>
+                  <linearGradient
+                    id="svcGrad5"
+                    x1="0"
+                    y1="0"
+                    x2="24"
+                    y2="24"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#fbbf24" />
+                    <stop offset="1" stop-color="#f97316" />
+                  </linearGradient>
+                </defs>
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+              </svg>
+              <div class="icon-ring"></div>
+            </div>
+            <h3 class="service-title">Marketing & SEO</h3>
+            <p class="service-description">
+              Data-driven marketing strategies and AI-optimized SEO that boost
+              your visibility and organic traffic growth.
+            </p>
+            <div class="service-actions">
+              <button
+                class="service-link btn-learn-more"
+                onclick="openLearnMoreModal('marketing-seo')"
+              >
+                Learn more
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
+              <button
+                class="btn-locked"
+                data-service="marketing-seo"
+                onclick="openServiceForm('marketing-seo')"
+              >
+                <span class="locked-icon">🔒</span>
+                <span class="locked-text">Get Started</span>
+                <span class="locked-tooltip">Login to unlock this feature</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Analytics Dashboard -->
+        <div class="service-card scroll-reveal" id="service-analytics">
+          <div class="service-card-glow"></div>
+          <div class="service-card-border"></div>
+          <div class="service-card-content">
+            <div class="service-icon-wrapper">
+              <svg
+                class="service-icon"
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="url(#svcGrad6)"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <defs>
+                  <linearGradient
+                    id="svcGrad6"
+                    x1="0"
+                    y1="0"
+                    x2="24"
+                    y2="24"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#3b82f6" />
+                    <stop offset="1" stop-color="#8b5cf6" />
+                  </linearGradient>
+                </defs>
+                <line x1="18" y1="20" x2="18" y2="10" />
+                <line x1="12" y1="20" x2="12" y2="4" />
+                <line x1="6" y1="20" x2="6" y2="14" />
+              </svg>
+              <div class="icon-ring"></div>
+            </div>
+            <h3 class="service-title">Analytics Dashboard</h3>
+            <p class="service-description">
+              Real-time business insights and custom reporting dashboards to
+              track your most important metrics.
+            </p>
+            <div class="service-actions">
+              <button
+                class="service-link btn-learn-more"
+                onclick="openLearnMoreModal('analytics-dashboard')"
+              >
+                Learn more
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
+              <button
+                class="btn-locked"
+                data-service="analytics-dashboard"
+                onclick="openServiceForm('analytics-dashboard')"
+              >
+                <span class="locked-icon">🔒</span>
+                <span class="locked-text">Get Started</span>
+                <span class="locked-tooltip">Login to unlock this feature</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 7: AI Agents -->
+        <div class="service-card scroll-reveal" id="service-ai-agents">
+          <div class="service-card-glow"></div>
+          <div class="service-card-border"></div>
+          <div class="service-card-content">
+            <div class="service-icon-wrapper">
+              <svg
+                class="service-icon"
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="url(#svcGrad7)"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <defs>
+                  <linearGradient
+                    id="svcGrad7"
+                    x1="0"
+                    y1="0"
+                    x2="24"
+                    y2="24"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#0ea5e9" />
+                    <stop offset="1" stop-color="#3b82f6" />
+                  </linearGradient>
+                </defs>
+                <rect x="3" y="11" width="18" height="10" rx="2" ry="2" />
+                <circle cx="12" cy="5" r="2" />
+                <path d="M12 7v4" />
+                <line x1="8" y1="16" x2="8" y2="16" />
+                <line x1="16" y1="16" x2="16" y2="16" />
+              </svg>
+              <div class="icon-ring"></div>
+            </div>
+            <h3 class="service-title">AI Agents</h3>
+            <p class="service-description">
+              Smart AI agents for automation, customer handling, and workflows.
+            </p>
+            <div class="service-actions">
+              <button
+                class="service-link btn-learn-more"
+                onclick="openLearnMoreModal('ai-agents')"
+              >
+                Learn more
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
+              <button
+                class="btn-locked"
+                data-service="ai-agents"
+                onclick="openServiceForm('ai-agents')"
+              >
+                <span class="locked-icon">🔒</span>
+                <span class="locked-text">Get Started</span>
+                <span class="locked-tooltip">Login to unlock this feature</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8: AI Marketing -->
+        <div class="service-card scroll-reveal" id="service-ai-marketing">
+          <div class="service-card-glow"></div>
+          <div class="service-card-border"></div>
+          <div class="service-card-content">
+            <div class="service-icon-wrapper">
+              <svg
+                class="service-icon"
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="url(#svcGrad8)"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <defs>
+                  <linearGradient
+                    id="svcGrad8"
+                    x1="0"
+                    y1="0"
+                    x2="24"
+                    y2="24"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#f43f5e" />
+                    <stop offset="1" stop-color="#ec4899" />
+                  </linearGradient>
+                </defs>
+                <path d="M3 3v18h18" />
+                <path d="M18 9l-5 5-4-4-5 5" />
+                <circle cx="18" cy="9" r="2" />
+              </svg>
+              <div class="icon-ring"></div>
+            </div>
+            <h3 class="service-title">AI Marketing</h3>
+            <p class="service-description">
+              AI-powered ad optimization, content generation, and lead
+              generation.
+            </p>
+            <div class="service-actions">
+              <button
+                class="service-link btn-learn-more"
+                onclick="openLearnMoreModal('ai-marketing')"
+              >
+                Learn more
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
+              <button
+                class="btn-locked"
+                data-service="ai-marketing"
+                onclick="openServiceForm('ai-marketing')"
+              >
+                <span class="locked-icon">🔒</span>
+                <span class="locked-text">Get Started</span>
+                <span class="locked-tooltip">Login to unlock this feature</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 9: AI SaaS Solutions -->
+        <div class="service-card scroll-reveal" id="service-ai-saas">
+          <div class="service-card-glow"></div>
+          <div class="service-card-border"></div>
+          <div class="service-card-content">
+            <div class="service-icon-wrapper">
+              <svg
+                class="service-icon"
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="url(#svcGrad9)"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <defs>
+                  <linearGradient
+                    id="svcGrad9"
+                    x1="0"
+                    y1="0"
+                    x2="24"
+                    y2="24"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#10b981" />
+                    <stop offset="1" stop-color="#059669" />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"
+                />
+                <path d="M12 12v9" />
+                <path d="M8 17l4 4 4-4" />
+              </svg>
+              <div class="icon-ring"></div>
+            </div>
+            <h3 class="service-title">AI SaaS Solutions</h3>
+            <p class="service-description">
+              Custom SaaS platforms with AI integrations and dashboards.
+            </p>
+            <div class="service-actions">
+              <button
+                class="service-link btn-learn-more"
+                onclick="openLearnMoreModal('ai-saas-solutions')"
+              >
+                Learn more
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
+              <button
+                class="btn-locked"
+                data-service="ai-saas-solutions"
+                onclick="openServiceForm('ai-saas-solutions')"
+              >
+                <span class="locked-icon">🔒</span>
+                <span class="locked-text">Get Started</span>
+                <span class="locked-tooltip">Login to unlock this feature</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== AI Chatbot Demo Section ===== -->
+    <section class="chatbot-demo" id="solutions">
+      <!-- Section glow accents -->
+      <div class="chatbot-glow chatbot-glow-left"></div>
+      <div class="chatbot-glow chatbot-glow-right"></div>
+
+      <div class="chatbot-demo-inner">
+        <!-- LEFT COLUMN -->
+        <div class="chatbot-info">
+          <div class="section-badge scroll-reveal">
+            <span class="section-badge-dot"></span>
+            Live Demo
+          </div>
+
+          <h2 class="chatbot-heading scroll-reveal">
+            Experience AI<br />in Action <span class="chatbot-emoji">🤖</span>
+          </h2>
+
+          <p class="chatbot-subheading scroll-reveal">
+            Interact with our smart AI assistant and see how it can transform
+            your business.
+          </p>
+
+          <ul class="chatbot-features scroll-reveal">
+            <li>
+              <span class="feature-check">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </span>
+              <span>Instant replies in under 1 second</span>
+            </li>
+            <li>
+              <span class="feature-check">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </span>
+              <span>Smart lead capture &amp; qualification</span>
+            </li>
+            <li>
+              <span class="feature-check">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </span>
+              <span>24/7 automation — never miss a lead</span>
+            </li>
+          </ul>
+
+          <!-- Stats mini-cards -->
+          <div class="chatbot-stats scroll-reveal">
+            <div class="stat-card">
+              <span class="stat-value">0.3s</span>
+              <span class="stat-label">Avg Response</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">98%</span>
+              <span class="stat-label">Accuracy</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value">24/7</span>
+              <span class="stat-label">Uptime</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN — Chat UI -->
+        <div class="chatbot-ui-wrapper scroll-reveal">
+          <!-- Floating labels -->
+          <div class="chat-floating-label label-ai-active">
+            <span class="label-pulse"></span>
+            AI Active
+          </div>
+          <div class="chat-floating-label label-smart-response">
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+            </svg>
+            Smart Response
+          </div>
+
+          <div class="chatbot-container" id="chatbot-container">
+            <!-- Chat Header -->
+            <div class="chat-header">
+              <div class="chat-header-left">
+                <div class="chat-avatar">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect x="3" y="11" width="18" height="10" rx="2" />
+                    <circle cx="12" cy="5" r="4" />
+                    <line x1="8" y1="16" x2="8" y2="16.01" />
+                    <line x1="16" y1="16" x2="16" y2="16.01" />
+                    <path d="M9 20h6" />
+                  </svg>
+                </div>
+                <div>
+                  <span class="chat-bot-name">NEXORA AI</span>
+                  <span class="chat-bot-status">
+                    <span class="status-dot"></span>
+                    Online
+                  </span>
+                </div>
+              </div>
+              <div class="chat-header-right">
+                <div class="chat-header-dot"></div>
+                <div class="chat-header-dot"></div>
+                <div class="chat-header-dot"></div>
+              </div>
+            </div>
+
+            <!-- Chat Messages -->
+            <div class="chat-messages" id="chat-messages">
+              <!-- Messages will be injected by JS -->
+            </div>
+
+            <!-- Chat Input -->
+            <div class="chat-input-area">
+              <div class="chat-input-wrapper">
+                <input
+                  type="text"
+                  class="chat-input"
+                  id="chat-input"
+                  placeholder="Type a message..."
+                  readonly
+                />
+                <button
+                  class="chat-send-btn"
+                  id="chat-send-btn"
+                  aria-label="Send message"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="22" y1="2" x2="11" y2="13" />
+                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                  </svg>
+                </button>
+              </div>
+              <span class="chat-powered-by"
+                >Powered by <strong>NEXORA AI</strong></span
+              >
+            </div>
+          </div>
+
+          <!-- Animated wave decoration -->
+          <div class="chat-wave-decoration">
+            <div class="wave-bar" style="--i: 0"></div>
+            <div class="wave-bar" style="--i: 1"></div>
+            <div class="wave-bar" style="--i: 2"></div>
+            <div class="wave-bar" style="--i: 3"></div>
+            <div class="wave-bar" style="--i: 4"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Portfolio Section ===== -->
+    <section class="portfolio" id="portfolio">
+      <div class="portfolio-glow portfolio-glow-left"></div>
+      <div class="portfolio-glow portfolio-glow-right"></div>
+
+      <div class="portfolio-header">
+        <div class="section-badge scroll-reveal">
+          <span class="section-badge-dot"></span>
+          Portfolio
+        </div>
+        <h2 class="portfolio-heading scroll-reveal">
+          Our Work Speaks<br />
+          <span class="gradient-text-services">for Itself</span> 💼
+        </h2>
+        <p class="portfolio-subheading scroll-reveal">
+          Explore how we've helped businesses grow with powerful digital
+          solutions.
+        </p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="portfolio-filters scroll-reveal">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="ai">AI</button>
+        <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+        <button class="filter-btn" data-filter="marketing">Marketing</button>
+      </div>
+
+      <!-- Portfolio Grid — 9 projects (6 visible, 3 hidden) -->
+      <div class="portfolio-grid" id="portfolio-grid">
+
+        <!-- 1. Website Development → Business Website -->
+        <div class="portfolio-card scroll-reveal" data-category="web" id="project-business-website">
+          <div class="portfolio-card-inner">
+            <div class="portfolio-img-wrapper">
+              <img src="assets/project-restaurant.png" alt="Business Website Project" class="portfolio-img" loading="lazy" />
+              <div class="portfolio-img-overlay">
+                <a href="#" class="portfolio-view-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  View Project
+                </a>
+              </div>
+              <div class="portfolio-category-tag">Web Dev</div>
+            </div>
+            <div class="portfolio-card-body">
+              <h3 class="portfolio-title">Business Website</h3>
+              <p class="portfolio-desc">Modern restaurant website with online ordering, table reservations, and AI-powered chatbot for instant support.</p>
+              <div class="portfolio-card-footer">
+                <div class="portfolio-tech">
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">Stripe</span>
+                </div>
+                <a href="#" class="portfolio-arrow" aria-label="View project"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. AI Chatbots → AI Chatbot Demo -->
+        <div class="portfolio-card scroll-reveal" data-category="ai" id="project-ai-chatbot">
+          <div class="portfolio-card-inner">
+            <div class="portfolio-img-wrapper">
+              <img src="assets/project-salon.png" alt="AI Chatbot Demo" class="portfolio-img" loading="lazy" />
+              <div class="portfolio-img-overlay">
+                <a href="#" class="portfolio-view-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  View Project
+                </a>
+              </div>
+              <div class="portfolio-category-tag">AI</div>
+            </div>
+            <div class="portfolio-card-body">
+              <h3 class="portfolio-title">AI Chatbot Demo</h3>
+              <p class="portfolio-desc">Intelligent 24/7 chatbot with natural language processing, automated appointment booking, and smart customer engagement.</p>
+              <div class="portfolio-card-footer">
+                <div class="portfolio-tech">
+                  <span class="tech-tag">GPT-4</span>
+                  <span class="tech-tag">NLP</span>
+                  <span class="tech-tag">WhatsApp</span>
+                </div>
+                <a href="#" class="portfolio-arrow" aria-label="View project"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Automation Systems → Workflow Automation -->
+        <div class="portfolio-card scroll-reveal" data-category="ai" id="project-automation">
+          <div class="portfolio-card-inner">
+            <div class="portfolio-img-wrapper">
+              <img src="assets/project-automation.png" alt="Workflow Automation Project" class="portfolio-img" loading="lazy" />
+              <div class="portfolio-img-overlay">
+                <a href="#" class="portfolio-view-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  View Project
+                </a>
+              </div>
+              <div class="portfolio-category-tag">Automation</div>
+            </div>
+            <div class="portfolio-card-body">
+              <h3 class="portfolio-title">Workflow Automation</h3>
+              <p class="portfolio-desc">End-to-end workflow automation with Zapier, Make, and custom API pipelines that eliminated 20+ hours of weekly manual work.</p>
+              <div class="portfolio-card-footer">
+                <div class="portfolio-tech">
+                  <span class="tech-tag">Zapier</span>
+                  <span class="tech-tag">APIs</span>
+                  <span class="tech-tag">Python</span>
+                </div>
+                <a href="#" class="portfolio-arrow" aria-label="View project"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. E-commerce Solutions → E-commerce Store -->
+        <div class="portfolio-card scroll-reveal" data-category="ecommerce web" id="project-ecommerce">
+          <div class="portfolio-card-inner">
+            <div class="portfolio-img-wrapper">
+              <img src="assets/project-ecommerce.png" alt="E-commerce Store" class="portfolio-img" loading="lazy" />
+              <div class="portfolio-img-overlay">
+                <a href="#" class="portfolio-view-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  View Project
+                </a>
+              </div>
+              <div class="portfolio-category-tag">E-commerce</div>
+            </div>
+            <div class="portfolio-card-body">
+              <h3 class="portfolio-title">E-commerce Store</h3>
+              <p class="portfolio-desc">High-performance online store with lightning-fast checkout, AI product recommendations, and optimized conversion flow.</p>
+              <div class="portfolio-card-footer">
+                <div class="portfolio-tech">
+                  <span class="tech-tag">Shopify</span>
+                  <span class="tech-tag">AI Recs</span>
+                  <span class="tech-tag">Analytics</span>
+                </div>
+                <a href="#" class="portfolio-arrow" aria-label="View project"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Marketing & SEO → Marketing Campaign Dashboard -->
+        <div class="portfolio-card scroll-reveal" data-category="marketing web" id="project-marketing">
+          <div class="portfolio-card-inner">
+            <div class="portfolio-img-wrapper">
+              <img src="assets/project-marketing.png" alt="Marketing Campaign Dashboard" class="portfolio-img" loading="lazy" />
+              <div class="portfolio-img-overlay">
+                <a href="#" class="portfolio-view-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  View Project
+                </a>
+              </div>
+              <div class="portfolio-category-tag">Marketing</div>
+            </div>
+            <div class="portfolio-card-body">
+              <h3 class="portfolio-title">Marketing Campaign Dashboard</h3>
+              <p class="portfolio-desc">Data-driven SEO and marketing dashboard with keyword tracking, traffic analytics, and AI-optimized content strategies.</p>
+              <div class="portfolio-card-footer">
+                <div class="portfolio-tech">
+                  <span class="tech-tag">SEO</span>
+                  <span class="tech-tag">Google Ads</span>
+                  <span class="tech-tag">Analytics</span>
+                </div>
+                <a href="#" class="portfolio-arrow" aria-label="View project"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Analytics Dashboard → Analytics Dashboard Project -->
+        <div class="portfolio-card scroll-reveal" data-category="web ai" id="project-analytics">
+          <div class="portfolio-card-inner">
+            <div class="portfolio-img-wrapper">
+              <img src="assets/project-analytics.png" alt="Analytics Dashboard Project" class="portfolio-img" loading="lazy" />
+              <div class="portfolio-img-overlay">
+                <a href="#" class="portfolio-view-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  View Project
+                </a>
+              </div>
+              <div class="portfolio-category-tag">Web + AI</div>
+            </div>
+            <div class="portfolio-card-body">
+              <h3 class="portfolio-title">Analytics Dashboard</h3>
+              <p class="portfolio-desc">Real-time KPI dashboard with custom data visualizations, multi-source integrations, and automated reporting for key business metrics.</p>
+              <div class="portfolio-card-footer">
+                <div class="portfolio-tech">
+                  <span class="tech-tag">D3.js</span>
+                  <span class="tech-tag">REST API</span>
+                  <span class="tech-tag">Firebase</span>
+                </div>
+                <a href="#" class="portfolio-arrow" aria-label="View project"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. AI Agents → AI Agent System Demo (HIDDEN) -->
+        <div class="portfolio-card scroll-reveal portfolio-extra-card" data-category="ai" id="project-ai-agent">
+          <div class="portfolio-card-inner">
+            <div class="portfolio-img-wrapper">
+              <img src="assets/project-ai-agent.png" alt="AI Agent System Demo" class="portfolio-img" loading="lazy" />
+              <div class="portfolio-img-overlay">
+                <a href="#" class="portfolio-view-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  View Project
+                </a>
+              </div>
+              <div class="portfolio-category-tag">AI Agent</div>
+            </div>
+            <div class="portfolio-card-body">
+              <h3 class="portfolio-title">AI Agent System</h3>
+              <p class="portfolio-desc">Autonomous AI agent with multi-channel integration (Slack, Email, CRM), automated task execution, and intelligent decision-making.</p>
+              <div class="portfolio-card-footer">
+                <div class="portfolio-tech">
+                  <span class="tech-tag">LangChain</span>
+                  <span class="tech-tag">OpenAI</span>
+                  <span class="tech-tag">Webhooks</span>
+                </div>
+                <a href="#" class="portfolio-arrow" aria-label="View project"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. AI Marketing → AI Marketing System Demo (HIDDEN) -->
+        <div class="portfolio-card scroll-reveal portfolio-extra-card" data-category="ai marketing" id="project-ai-marketing">
+          <div class="portfolio-card-inner">
+            <div class="portfolio-img-wrapper">
+              <img src="assets/project-ai-marketing.png" alt="AI Marketing System Demo" class="portfolio-img" loading="lazy" />
+              <div class="portfolio-img-overlay">
+                <a href="#" class="portfolio-view-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  View Project
+                </a>
+              </div>
+              <div class="portfolio-category-tag">AI Marketing</div>
+            </div>
+            <div class="portfolio-card-body">
+              <h3 class="portfolio-title">AI Marketing System</h3>
+              <p class="portfolio-desc">AI-powered ad platform with automated A/B testing, dynamic creative generation, conversion funnel optimization, and ROI tracking.</p>
+              <div class="portfolio-card-footer">
+                <div class="portfolio-tech">
+                  <span class="tech-tag">Meta Ads</span>
+                  <span class="tech-tag">AI Creative</span>
+                  <span class="tech-tag">CRO</span>
+                </div>
+                <a href="#" class="portfolio-arrow" aria-label="View project"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. AI SaaS Solutions → SaaS Platform Demo (HIDDEN) -->
+        <div class="portfolio-card scroll-reveal portfolio-extra-card" data-category="web ai" id="project-saas">
+          <div class="portfolio-card-inner">
+            <div class="portfolio-img-wrapper">
+              <img src="assets/project-saas.png" alt="SaaS Platform Demo" class="portfolio-img" loading="lazy" />
+              <div class="portfolio-img-overlay">
+                <a href="#" class="portfolio-view-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  View Project
+                </a>
+              </div>
+              <div class="portfolio-category-tag">SaaS</div>
+            </div>
+            <div class="portfolio-card-body">
+              <h3 class="portfolio-title">SaaS Platform</h3>
+              <p class="portfolio-desc">Full-stack AI SaaS platform with user management, subscription billing, API usage analytics, and a premium user dashboard.</p>
+              <div class="portfolio-card-footer">
+                <div class="portfolio-tech">
+                  <span class="tech-tag">Next.js</span>
+                  <span class="tech-tag">Stripe</span>
+                  <span class="tech-tag">OpenAI</span>
+                </div>
+                <a href="#" class="portfolio-arrow" aria-label="View project"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- View All CTA -->
+      <div class="portfolio-cta scroll-reveal">
+        <button type="button" class="btn-secondary portfolio-all-btn" id="view-all-projects-btn">
+          View All Projects
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- ===== Pricing Section ===== -->
+    <section class="pricing" id="pricing">
+      <div class="pricing-glow pricing-glow-left"></div>
+      <div class="pricing-glow pricing-glow-right"></div>
+
+      <div class="pricing-header">
+        <div class="section-badge scroll-reveal">
+          <span class="section-badge-dot"></span>
+          Pricing
+        </div>
+        <h2 class="pricing-heading scroll-reveal">
+          Service-Based<br />
+          <span class="gradient-text-services">Pricing</span> 💰
+        </h2>
+        <p class="pricing-subheading scroll-reveal">
+          Transparent pricing for every service. Pick the tier that fits your business goals.
+        </p>
+
+        <!-- Currency Toggle -->
+        <div class="currency-toggle scroll-reveal">
+          <span class="currency-label" id="currency-inr-label">₹ INR</span>
+          <button class="toggle-switch" id="currency-toggle" aria-label="Toggle currency">
+            <span class="toggle-knob"></span>
+          </button>
+          <span class="currency-label" id="currency-usd-label">$ USD</span>
+        </div>
+      </div>
+
+      <!-- Pricing Tab Navigation -->
+      <div class="pricing-tabs scroll-reveal" id="pricing-tabs">
+        <button class="pricing-tab active" data-pricing-tab="website">🖥️ Website Dev</button>
+        <button class="pricing-tab" data-pricing-tab="chatbot">🤖 AI Chatbot</button>
+        <button class="pricing-tab" data-pricing-tab="ecommerce">🛒 E-commerce</button>
+        <button class="pricing-tab" data-pricing-tab="aimarketing">📈 AI Marketing</button>
+        <button class="pricing-tab" data-pricing-tab="saas">☁️ SaaS Solutions</button>
+      </div>
+
+      <!-- ===== TAB 1: Website Development ===== -->
+      <div class="pricing-tab-content active" id="pricing-website">
+        <div class="pricing-grid">
+          <div class="pricing-card scroll-reveal">
+            <div class="pricing-card-inner">
+              <div class="pricing-card-header">
+                <span class="plan-icon">🥉</span>
+                <h3 class="plan-name">Basic Website</h3>
+                <p class="plan-tagline">Perfect landing page for starters</p>
+              </div>
+              <div class="plan-price-block">
+                <span class="plan-price" data-inr="4,999" data-usd="59"><span class="price-currency">₹</span><span class="price-amount">4,999</span></span>
+                <span class="price-period">/project</span>
+              </div>
+              <ul class="plan-features">
+                <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Up to 5 Pages</li>
+                <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Mobile Responsive</li>
+                <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Basic SEO Setup</li>
+                <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Contact Form</li>
+                <li class="feature-no"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>AI Chatbot</li>
+                <li class="feature-no"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Custom Backend</li>
+              </ul>
+              <button type="button" class="plan-cta plan-cta-outline" onclick="handlePricingCTA()">Get Started</button>
+            </div>
+          </div>
+          <div class="pricing-card pricing-card-featured scroll-reveal">
+            <div class="pricing-popular-tag">⭐ Best Value</div>
+            <div class="pricing-card-border-glow"></div>
+            <div class="pricing-card-inner">
+              <div class="pricing-card-header">
+                <span class="plan-icon">🥈</span>
+                <h3 class="plan-name">Business Website</h3>
+                <p class="plan-tagline">Complete business solution</p>
+              </div>
+              <div class="plan-price-block">
+                <span class="plan-price" data-inr="9,999" data-usd="119"><span class="price-currency">₹</span><span class="price-amount">9,999</span></span>
+                <span class="price-period">/project</span>
+              </div>
+              <ul class="plan-features">
+                <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Up to 15 Pages</li>
+                <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Admin Dashboard</li>
+                <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>SEO Optimization</li>
+                <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Basic AI Chatbot</li>
+                <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Analytics Integration</li>
+                <li class="feature-no"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Custom Features</li>
+              </ul>
+              <button type="button" class="plan-cta plan-cta-gradient" onclick="handlePricingCTA()">Get Started</button>
+            </div>
+          </div>
+          <div class="pricing-card scroll-reveal">
+            <div class="pricing-card-inner">
+              <div class="pricing-card-header">
+                <span class="plan-icon">🥇</span>
+                <h3 class="plan-name">Advanced Website</h3>
+                <p class="plan-tagline">Full custom development</p>
+              </div>
+              <div class="plan-price-block">
+                <span class="plan-price" data-inr="19,999" data-usd="239"><span class="price-currency">₹</span><span class="price-amount">19,999</span></span>
+                <span class="price-period">+ /project</span>
+              </div>
+              <ul class="plan-features">
+                <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Unlimited Pages</li>
+                <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Full AI Chatbot Suite</li>
+                <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Custom Backend & API</li>
+                <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Automation Integration</li>
+                <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Priority Support</li>
+                <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Dedicated Manager</li>
+              </ul>
+              <button type="button" class="plan-cta plan-cta-outline" onclick="handlePricingCTA()">Get Started</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== TAB 2: AI Chatbot ===== -->
+      <div class="pricing-tab-content" id="pricing-chatbot">
+        <div class="pricing-grid">
+          <div class="pricing-card scroll-reveal"><div class="pricing-card-inner">
+            <div class="pricing-card-header"><span class="plan-icon">🤖</span><h3 class="plan-name">Basic Bot</h3><p class="plan-tagline">Simple FAQ chatbot</p></div>
+            <div class="plan-price-block"><span class="plan-price" data-inr="3,999" data-usd="49"><span class="price-currency">₹</span><span class="price-amount">3,999</span></span><span class="price-period">/project</span></div>
+            <ul class="plan-features">
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Pre-built FAQ Responses</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Website Widget</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Lead Capture</li>
+              <li class="feature-no"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>WhatsApp Integration</li>
+              <li class="feature-no"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Custom AI Training</li>
+            </ul>
+            <button type="button" class="plan-cta plan-cta-outline" onclick="handlePricingCTA()">Get Started</button>
+          </div></div>
+          <div class="pricing-card pricing-card-featured scroll-reveal">
+            <div class="pricing-popular-tag">⭐ Best Value</div><div class="pricing-card-border-glow"></div>
+            <div class="pricing-card-inner">
+            <div class="pricing-card-header"><span class="plan-icon">🧠</span><h3 class="plan-name">Smart AI Bot</h3><p class="plan-tagline">GPT-powered intelligence</p></div>
+            <div class="plan-price-block"><span class="plan-price" data-inr="8,999" data-usd="109"><span class="price-currency">₹</span><span class="price-amount">8,999</span></span><span class="price-period">/project</span></div>
+            <ul class="plan-features">
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>GPT-4 Powered</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>WhatsApp + Web</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Lead Qualification</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Custom Knowledge Base</li>
+              <li class="feature-no"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Multi-channel Agents</li>
+            </ul>
+            <button type="button" class="plan-cta plan-cta-gradient" onclick="handlePricingCTA()">Get Started</button>
+          </div></div>
+          <div class="pricing-card scroll-reveal"><div class="pricing-card-inner">
+            <div class="pricing-card-header"><span class="plan-icon">🚀</span><h3 class="plan-name">Advanced Agent</h3><p class="plan-tagline">Full autonomous AI</p></div>
+            <div class="plan-price-block"><span class="plan-price" data-inr="15,000" data-usd="179"><span class="price-currency">₹</span><span class="price-amount">15,000</span></span><span class="price-period">+ /project</span></div>
+            <ul class="plan-features">
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Multi-channel (WhatsApp, Slack, Email)</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>CRM Integration</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Custom AI Training</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Analytics Dashboard</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Priority Support</li>
+            </ul>
+            <button type="button" class="plan-cta plan-cta-outline" onclick="handlePricingCTA()">Get Started</button>
+          </div></div>
+        </div>
+      </div>
+
+      <!-- ===== TAB 3: E-commerce ===== -->
+      <div class="pricing-tab-content" id="pricing-ecommerce">
+        <div class="pricing-grid">
+          <div class="pricing-card scroll-reveal"><div class="pricing-card-inner">
+            <div class="pricing-card-header"><span class="plan-icon">🛍️</span><h3 class="plan-name">Starter Store</h3><p class="plan-tagline">Launch your first store</p></div>
+            <div class="plan-price-block"><span class="plan-price" data-inr="7,999" data-usd="99"><span class="price-currency">₹</span><span class="price-amount">7,999</span></span><span class="price-period">/project</span></div>
+            <ul class="plan-features">
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Up to 50 Products</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Payment Gateway</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Mobile Responsive</li>
+              <li class="feature-no"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>AI Recommendations</li>
+            </ul>
+            <button type="button" class="plan-cta plan-cta-outline" onclick="handlePricingCTA()">Get Started</button>
+          </div></div>
+          <div class="pricing-card pricing-card-featured scroll-reveal">
+            <div class="pricing-popular-tag">⭐ Best Value</div><div class="pricing-card-border-glow"></div>
+            <div class="pricing-card-inner">
+            <div class="pricing-card-header"><span class="plan-icon">🏪</span><h3 class="plan-name">Pro Store</h3><p class="plan-tagline">Scale your business</p></div>
+            <div class="plan-price-block"><span class="plan-price" data-inr="14,999" data-usd="179"><span class="price-currency">₹</span><span class="price-amount">14,999</span></span><span class="price-period">/project</span></div>
+            <ul class="plan-features">
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Up to 500 Products</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>AI Product Recommendations</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Inventory Management</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Analytics Dashboard</li>
+            </ul>
+            <button type="button" class="plan-cta plan-cta-gradient" onclick="handlePricingCTA()">Get Started</button>
+          </div></div>
+          <div class="pricing-card scroll-reveal"><div class="pricing-card-inner">
+            <div class="pricing-card-header"><span class="plan-icon">🏢</span><h3 class="plan-name">Enterprise Store</h3><p class="plan-tagline">Full custom solution</p></div>
+            <div class="plan-price-block"><span class="plan-price" data-inr="25,000" data-usd="299"><span class="price-currency">₹</span><span class="price-amount">25,000</span></span><span class="price-period">+ /project</span></div>
+            <ul class="plan-features">
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Unlimited Products</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Custom Theme & Plugins</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Multi-vendor Support</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Priority Support</li>
+            </ul>
+            <button type="button" class="plan-cta plan-cta-outline" onclick="handlePricingCTA()">Get Started</button>
+          </div></div>
+        </div>
+      </div>
+
+      <!-- ===== TAB 4: AI Marketing ===== -->
+      <div class="pricing-tab-content" id="pricing-aimarketing">
+        <div class="pricing-grid">
+          <div class="pricing-card scroll-reveal"><div class="pricing-card-inner">
+            <div class="pricing-card-header"><span class="plan-icon">📊</span><h3 class="plan-name">Starter Marketing</h3><p class="plan-tagline">Basic digital presence</p></div>
+            <div class="plan-price-block"><span class="plan-price" data-inr="5,999" data-usd="69"><span class="price-currency">₹</span><span class="price-amount">5,999</span></span><span class="price-period">/month</span></div>
+            <ul class="plan-features">
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Basic SEO Audit</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Social Media Setup</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Monthly Report</li>
+              <li class="feature-no"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>AI Content Generation</li>
+            </ul>
+            <button type="button" class="plan-cta plan-cta-outline" onclick="handlePricingCTA()">Get Started</button>
+          </div></div>
+          <div class="pricing-card pricing-card-featured scroll-reveal">
+            <div class="pricing-popular-tag">⭐ Best Value</div><div class="pricing-card-border-glow"></div>
+            <div class="pricing-card-inner">
+            <div class="pricing-card-header"><span class="plan-icon">🚀</span><h3 class="plan-name">Growth Plan</h3><p class="plan-tagline">Scale your traffic</p></div>
+            <div class="plan-price-block"><span class="plan-price" data-inr="12,999" data-usd="149"><span class="price-currency">₹</span><span class="price-amount">12,999</span></span><span class="price-period">/month</span></div>
+            <ul class="plan-features">
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>AI Content Generation</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Paid Ads Management</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>A/B Testing</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Conversion Tracking</li>
+            </ul>
+            <button type="button" class="plan-cta plan-cta-gradient" onclick="handlePricingCTA()">Get Started</button>
+          </div></div>
+          <div class="pricing-card scroll-reveal"><div class="pricing-card-inner">
+            <div class="pricing-card-header"><span class="plan-icon">💎</span><h3 class="plan-name">Scale Plan</h3><p class="plan-tagline">Full marketing engine</p></div>
+            <div class="plan-price-block"><span class="plan-price" data-inr="25,000" data-usd="299"><span class="price-currency">₹</span><span class="price-amount">25,000</span></span><span class="price-period">+ /month</span></div>
+            <ul class="plan-features">
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Full AI Marketing Suite</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Dynamic Retargeting</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Multi-channel Campaigns</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Dedicated Strategist</li>
+            </ul>
+            <button type="button" class="plan-cta plan-cta-outline" onclick="handlePricingCTA()">Get Started</button>
+          </div></div>
+        </div>
+      </div>
+
+      <!-- ===== TAB 5: SaaS Solutions ===== -->
+      <div class="pricing-tab-content" id="pricing-saas">
+        <div class="pricing-grid pricing-grid-2col">
+          <div class="pricing-card pricing-card-featured scroll-reveal">
+            <div class="pricing-popular-tag">⭐ Best Value</div><div class="pricing-card-border-glow"></div>
+            <div class="pricing-card-inner">
+            <div class="pricing-card-header"><span class="plan-icon">🧪</span><h3 class="plan-name">MVP SaaS</h3><p class="plan-tagline">Launch fast, validate idea</p></div>
+            <div class="plan-price-block"><span class="plan-price" data-inr="15,000" data-usd="179"><span class="price-currency">₹</span><span class="price-amount">15,000</span></span><span class="price-period">+ /project</span></div>
+            <ul class="plan-features">
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Core AI Feature</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>User Auth & Dashboard</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Stripe Billing</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Cloud Deployment</li>
+            </ul>
+            <button type="button" class="plan-cta plan-cta-gradient" onclick="handlePricingCTA()">Get Started</button>
+          </div></div>
+          <div class="pricing-card scroll-reveal"><div class="pricing-card-inner">
+            <div class="pricing-card-header"><span class="plan-icon">🏗️</span><h3 class="plan-name">Full SaaS Platform</h3><p class="plan-tagline">Enterprise-grade product</p></div>
+            <div class="plan-price-block"><span class="plan-price" data-inr="50,000" data-usd="599"><span class="price-currency">₹</span><span class="price-amount">50,000</span></span><span class="price-period">+ /project</span></div>
+            <ul class="plan-features">
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Full Stack AI Integration</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Scalable Cloud Backend</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Admin Panel & Analytics</li>
+              <li class="feature-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Dedicated Team</li>
+            </ul>
+            <button type="button" class="plan-cta plan-cta-outline" onclick="handlePricingCTA()">Get Started</button>
+          </div></div>
+        </div>
+      </div>
+
+      <!-- Guarantee note -->
+      <div class="pricing-guarantee scroll-reveal">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+        <span>30-day money-back guarantee · No hidden fees · Cancel anytime</span>
+      </div>
+    </section>
+
+
+    <!-- ===== Lead Capture + CTA Section ===== -->
+    <section class="lead-capture" id="about">
+      <div class="lead-glow lead-glow-left"></div>
+      <div class="lead-glow lead-glow-right"></div>
+      <div class="lead-glow lead-glow-center"></div>
+
+      <div class="lead-inner">
+        <!-- Left Column — Copy -->
+        <div class="lead-copy">
+          <div class="section-badge scroll-reveal">
+            <span class="section-badge-dot"></span>
+            Get Started
+          </div>
+
+          <h2 class="lead-heading scroll-reveal">
+            Ready to Transform<br />Your Business with
+            <span class="lead-heading-gradient">AI</span>? 🚀
+          </h2>
+
+          <p class="lead-subheading scroll-reveal">
+            Get your free AI-powered website demo and start growing today.
+          </p>
+
+          <!-- Urgency badges -->
+          <div class="lead-urgency scroll-reveal">
+            <div class="urgency-pill urgency-fire">
+              <span>🔥</span>
+              <span><strong>100+</strong> businesses already growing</span>
+            </div>
+            <div class="urgency-pill urgency-bolt">
+              <span>⚡</span>
+              <span><strong>Limited slots</strong> available this month</span>
+            </div>
+          </div>
+
+          <!-- Trust logos row -->
+          <div class="lead-trust scroll-reveal">
+            <div class="trust-item">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+              <span>SSL Secured</span>
+            </div>
+            <div class="trust-item">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              <span>No Spam</span>
+            </div>
+            <div class="trust-item">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <span>Reply in 24h</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column — Form -->
+        <div class="lead-form-wrapper scroll-reveal">
+          <div class="lead-form-glow"></div>
+          <form class="lead-form" id="lead-form" autocomplete="off">
+            <h3 class="form-title">Claim Your Free Demo</h3>
+            <p class="form-subtitle">
+              Fill in the details and we'll reach out within 24 hours.
+            </p>
+
+            <div class="form-group">
+              <label for="lead-name" class="form-label">Your Name</label>
+              <div class="input-wrapper">
+                <svg
+                  class="input-icon"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+                <input
+                  type="text"
+                  id="lead-name"
+                  name="name"
+                  placeholder="John Doe"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="lead-business" class="form-label"
+                >Business Type</label
+              >
+              <div class="input-wrapper">
+                <svg
+                  class="input-icon"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                  <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                <input
+                  type="text"
+                  id="lead-business"
+                  name="business"
+                  placeholder="Restaurant, Salon, E-commerce..."
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="lead-whatsapp" class="form-label"
+                >WhatsApp Number</label
+              >
+              <div class="input-wrapper">
+                <svg
+                  class="input-icon"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+                  />
+                </svg>
+                <input
+                  type="tel"
+                  id="lead-whatsapp"
+                  name="whatsapp"
+                  placeholder="+91 98765 43210"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Primary CTA -->
+            <button
+              type="submit"
+              class="lead-btn lead-btn-primary"
+              id="lead-submit-btn"
+            >
+              <span class="btn-text">🚀 Get Free Demo</span>
+              <span class="btn-loading" style="display: none">
+                <span class="btn-spinner"></span>
+                Sending…
+              </span>
+            </button>
+
+            <!-- Secondary CTA — WhatsApp -->
+            <a
+              href="https://wa.me/919876543210?text=Hi%20NEXORA!%20I%27m%20interested%20in%20a%20free%20AI%20demo."
+              class="lead-btn lead-btn-whatsapp"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"
+                />
+              </svg>
+              💬 Chat on WhatsApp
+            </a>
+
+            <!-- Success message (hidden by default) -->
+            <div class="form-success" id="form-success" style="display: none">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              <span
+                >🎉 Demo request sent! We'll contact you within 24 hours.</span
+              >
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
+              <rect
+                x="4"
+                y="4"
+                width="32"
+                height="32"
+                rx="8"
+                stroke="url(#fgr)"
+                stroke-width="2.5"
+              />
+              <circle
+                cx="20"
+                cy="20"
+                r="6"
+                stroke="url(#fgr)"
+                stroke-width="2"
+              />
+              <defs>
+                <linearGradient id="fgr" x1="4" y1="4" x2="36" y2="36">
+                  <stop stop-color="#7c3aed" />
+                  <stop offset="1" stop-color="#06b6d4" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <span class="footer-brand-name">NEXORA</span>
+          </div>
+          <p class="footer-tagline">
+            AI-powered digital solutions for modern businesses.
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="#features">Features</a>
+          <a href="#solutions">Solutions</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#about">About</a>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 NEXORA. All rights reserved.</span>
+          <span class="footer-made">Made with 💜 and AI</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===== Dynamic Service Modals ===== -->
+
+    <!-- Learn More Modal -->
+    <div class="dynamic-modal-overlay" id="learn-more-modal">
+      <div class="dynamic-modal-content learn-more-content">
+        <button class="modal-close-btn" onclick="closeLearnMoreModal()">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
+        <div class="modal-header">
+          <h3 class="modal-title" id="lm-title">Service Details</h3>
+          <p class="modal-subtitle" id="lm-desc">
+            Discover how we can transform your business with this service.
+          </p>
+        </div>
+
+        <div class="modal-body" id="lm-body">
+          <div class="lm-section">
+            <h4>What we provide</h4>
+            <div class="lm-grid">
+              <div class="lm-grid-col">
+                <h5>Features</h5>
+                <ul class="learn-more-features" id="lm-features">
+                  <!-- Dynamically populated via JS -->
+                </ul>
+              </div>
+              <div class="lm-grid-col">
+                <h5>Use Cases</h5>
+                <ul class="learn-more-features" id="lm-use-cases">
+                  <!-- Dynamically populated via JS -->
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="lm-section">
+            <h4>Benefits</h4>
+            <p class="lm-text" id="lm-benefits"></p>
+          </div>
+
+          <div class="lm-section">
+            <h4>Real-world Example</h4>
+            <div class="lm-example-box">
+              <span class="lm-example-icon">💡</span>
+              <p class="lm-text" id="lm-example"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service Request Form Modal -->
+    <div class="dynamic-modal-overlay" id="service-form-modal">
+      <div class="dynamic-modal-content">
+        <button class="modal-close-btn" onclick="closeServiceForm()">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
+        <div class="modal-header">
+          <h3 class="modal-title">Start Your Project</h3>
+          <p class="modal-subtitle">
+            Submit your requirements for
+            <strong id="sf-service-name" style="color: var(--cyan)"></strong>
+            and our team will get back to you.
+          </p>
+        </div>
+
+        <form id="project-form" autocomplete="off">
+          <input type="hidden" id="sf-service-id" name="serviceId" />
+
+          <div id="dynamic-form-fields">
+            <!-- Fields injected dynamically -->
+          </div>
+
+          <div class="form-group" style="margin-top: 24px">
+            <label>Budget Range</label>
+            <select class="form-control" name="budget" required>
+              <option value="" disabled selected>Select a budget range</option>
+              <option value="<$1k">Less than $1,000</option>
+              <option value="$1k-$5k">$1,000 - $5,000</option>
+              <option value="$5k-$10k">$5,000 - $10,000</option>
+              <option value=">$10k">More than $10,000</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Additional Notes</label>
+            <textarea
+              class="form-control"
+              name="notes"
+              placeholder="Tell us more about your project goals or specific requirements..."
+            ></textarea>
+          </div>
+
+          <div id="form-submit-msg" class="form-message"></div>
+
+          <div style="margin-top: 30px">
+            <button
+              type="submit"
+              class="btn-primary"
+              style="width: 100%; justify-content: center"
+              id="form-submit-btn"
+            >
+              <span class="btn-glow"></span>
+              <span class="btn-text">Submit Request</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ===== Auth Modal ===== -->
+    <div class="auth-modal-overlay" id="auth-modal">
+      <div class="auth-modal-content">
+        <button class="auth-modal-close" id="auth-modal-close">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
+        <!-- Modal Glow -->
+        <div class="auth-modal-glow"></div>
+
+        <div class="auth-form-container" id="login-container">
+          <h3 class="auth-title">
+            Welcome Back <span class="emoji-rocket">✨</span>
+          </h3>
+          <p class="auth-subtitle">Log in to your NEXORA dashboard</p>
+
+          <div
+            id="login-error"
+            class="auth-error-msg"
+            style="display: none"
+          ></div>
+
+          <form id="login-form" class="auth-form">
+            <div class="input-group">
+              <label for="login-email">Email Address</label>
+              <input
+                type="email"
+                id="login-email"
+                placeholder="you@company.com"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label for="login-password">Password</label>
+              <input
+                type="password"
+                id="login-password"
+                placeholder="••••••••"
+                required
+              />
+            </div>
+            <button type="submit" class="btn-primary auth-submit-btn">
+              <span class="btn-glow"></span>
+              <span class="btn-text">Log In</span>
+              <span class="btn-loading" style="display: none">
+                <svg
+                  class="spinner"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="12" y1="2" x2="12" y2="6"></line>
+                  <line x1="12" y1="18" x2="12" y2="22"></line>
+                  <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
+                  <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
+                  <line x1="2" y1="12" x2="6" y2="12"></line>
+                  <line x1="18" y1="12" x2="22" y2="12"></line>
+                  <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line>
+                  <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
+                </svg>
+              </span>
+            </button>
+          </form>
+          <p class="auth-switch-text">
+            Don't have an account? <a href="#" id="switch-to-signup">Sign Up</a>
+          </p>
+        </div>
+
+        <div
+          class="auth-form-container"
+          id="signup-container"
+          style="display: none"
+        >
+          <h3 class="auth-title">
+            Create Account <span class="emoji-rocket">🚀</span>
+          </h3>
+          <p class="auth-subtitle">Join thousands of businesses on NEXORA</p>
+
+          <div
+            id="signup-error"
+            class="auth-error-msg"
+            style="display: none"
+          ></div>
+
+          <form id="signup-form" class="auth-form">
+            <div class="input-group">
+              <label for="signup-name">Full Name</label>
+              <input
+                type="text"
+                id="signup-name"
+                placeholder="John Doe"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label for="signup-email">Email Address</label>
+              <input
+                type="email"
+                id="signup-email"
+                placeholder="you@company.com"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label for="signup-password">Password</label>
+              <input
+                type="password"
+                id="signup-password"
+                placeholder="Min. 6 characters"
+                required
+                minlength="6"
+              />
+            </div>
+            <button type="submit" class="btn-primary auth-submit-btn">
+              <span class="btn-glow"></span>
+              <span class="btn-text">Create Account</span>
+              <span class="btn-loading" style="display: none">
+                <svg
+                  class="spinner"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="12" y1="2" x2="12" y2="6"></line>
+                  <line x1="12" y1="18" x2="12" y2="22"></line>
+                  <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
+                  <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
+                  <line x1="2" y1="12" x2="6" y2="12"></line>
+                  <line x1="18" y1="12" x2="22" y2="12"></line>
+                  <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line>
+                  <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
+                </svg>
+              </span>
+            </button>
+          </form>
+          <p class="auth-switch-text">
+            Already have an account? <a href="#" id="switch-to-login">Log In</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Demo Modal ===== -->
+    <div class="demo-modal-overlay" id="demo-modal">
+      <div class="demo-modal-content">
+        <div class="demo-modal-glow"></div>
+        <button
+          class="demo-modal-close"
+          id="demo-modal-close"
+          aria-label="Close modal"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <div class="demo-video-wrapper">
+          <div class="demo-placeholder">
+            <svg
+              width="48"
+              height="48"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="var(--cyan)"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              style="margin-bottom: 1rem"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="10 8 16 12 10 16 10 8"></polygon>
+            </svg>
+            <h3>NEXORA Platform Demo</h3>
+            <p>
+              Imagine a dynamic product walkthrough playing here, exploring
+              features and AI toolchains.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
